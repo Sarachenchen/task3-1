@@ -1,0 +1,212 @@
+/*页面初始化及其设置*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 800px;
+}
+
+#view {
+    height: 156px;
+    width: 156px;
+    margin: 178px auto 0 auto;
+}
+
+
+/*3D渲染*/
+
+.box {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-origin: 78px 78px;
+    -webkit-transform-origin: 78px 78px;
+    -moz-transform-origin: 78px 78px;
+    -o-transform-origin: 78px 78px;
+    -ms-transform-origin: 78px 78px;
+    animation: animation 3s ease-in-out infinite alternate;
+    -webkit-animation: animation 3s ease-in-out infinite alternate;
+    -moz-animation: animation 3s ease-in-out infinite alternate;
+    -o-animation: animation 3s ease-in-out infinite alternate;
+    -ms-animation: animation 3s ease-in-out infinite alternate;
+}
+
+
+/*通过移动构成正方体*/
+
+.box > div {
+    position: absolute;
+    height: 156px;
+    width: 156px;
+}
+
+.font {
+    transform: translateZ(78px);
+    -webkit-transform: translateZ(78px);
+    -moz-transform: translateZ(78px);
+    -o-transform: translateZ(78px);
+    -ms-transform: translateZ(78px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(78px);
+    -webkit-transform: rotateX(-90deg) translateZ(78px);
+    -moz-transform: rotateX(-90deg) translateZ(78px);
+    -o-transform: rotateX(-90deg) translateZ(78px);
+    -ms-transform: rotateX(-90deg) translateZ(78px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(78px);
+    -webkit-transform: rotateX(90deg) translateZ(78px);
+    -moz-transform: rotateX(90deg) translateZ(78px);
+    -o-transform: rotateX(90deg) translateZ(78px);
+    -ms-transform: rotateX(90deg) translateZ(78px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(78px);
+    -webkit-transform: rotateY(-90deg) translateZ(78px);
+    -moz-transform: rotateY(-90deg) translateZ(78px);
+    -o-transform: rotateY(-90deg) translateZ(78px);
+    -ms-transform: rotateY(-90deg) translateZ(78px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(78px);
+    -webkit-transform: rotateY(90deg) translateZ(78px);
+    -moz-transform: rotateY(90deg) translateZ(78px);
+    -o-transform: rotateY(90deg) translateZ(78px);
+    -ms-transform: rotateY(90deg) translateZ(78px);
+}
+
+.back {
+    transform: translateZ(-78px);
+    -webkit-transform: translateZ(-78px);
+    -moz-transform: translateZ(-78px);
+    -o-transform: translateZ(-78px);
+    -ms-transform: translateZ(-78px);
+}
+
+
+/*动画设置*/
+
+@keyframes animation {
+    0% {
+        transform: rotateY(45deg);
+    }
+    30% {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    70% {
+        transform: rotateX(150deg) rotateZ(150deg);
+    }
+    100% {
+        transform: rotateX(270deg) rotateY(250deg);
+    }
+}
+
+@-webkit-keyframes animation {
+    0% {
+        -webkit-transform: rotateY(45deg);
+    }
+    30% {
+        -webkit-transform: rotateX(90deg) rotateY(90deg);
+    }
+    70% {
+        -webkit-transform: rotateX(150deg) rotateZ(150deg);
+    }
+    100% {
+        -webkit-transform: rotateX(270deg) rotateY(250deg);
+    }
+}
+
+@-moz-keyframes animation {
+    0% {
+        -moz-transform: rotateY(45deg);
+    }
+    30% {
+        -moz-transform: rotateX(90deg) rotateY(90deg);
+    }
+    70% {
+        -moz-transform: rotateX(150deg) rotateZ(150deg);
+    }
+    100% {
+        -moz-transform: rotateX(270deg) rotateY(250deg);
+    }
+}
+
+@-o-keyframes animation {
+    0% {
+        -o-transform: rotateY(45deg);
+    }
+    30% {
+        -o-transform: rotateX(90deg) rotateY(90deg);
+    }
+    70% {
+        -o-transform: rotateX(150deg) rotateZ(150deg);
+    }
+    100% {
+        -o-transform: rotateX(270deg) rotateY(250deg);
+    }
+}
+
+@-ms-keyframesanimation {
+    0% {
+        -ms-transform: rotateY(45deg);
+    }
+    30% {
+        -ms-transform: rotateX(90deg) rotateY(90deg);
+    }
+    70% {
+        -ms-transform: rotateX(150deg) rotateZ(150deg);
+    }
+    100% {
+        -ms-transform: rotateX(270deg) rotateY(250deg);
+    }
+}
+
+
+/*每个面小正方形的构成*/
+
+.font>div,
+.back>div,
+.left>div,
+.right>div,
+.top>div,
+.bottom>div {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.font>div {
+    background-color: #ffeb3b;
+}
+
+.back>div {
+    background-color: #d6240a;
+}
+
+.left>div {
+    background-color: #82e60e;
+}
+
+.right>div {
+    background-color: #0ee6e4;
+}
+
+.top>div {
+    background-color: #1c23d0;
+}
+
+.bottom>div {
+    background-color: #1d7098;
+}
